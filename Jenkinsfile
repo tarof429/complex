@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Build app') {
             when {
-                branch '*/master' // only run these steps on the master branch
+                branch "*/master" // only run these steps on the master branch
             }
 
             steps {
