@@ -18,8 +18,13 @@ pipeline {
             }
         }
         stage('Build app') {
+            when {
+                branch 'master' // only run these steps on the master branch
+            }
+            
             steps {
-                sh "docker-compose build"
+                statusCode = sh returnStatus: true, script: "docker-compose build"
+                print(statusCode)
             }
         }
     }
