@@ -23,10 +23,7 @@ pipeline {
             }
 
             steps {
-                sh """
-                   docker-compose build
-                   echo Exit code: $?
-                """
+                sh label: 'output', returnStdout: true, script: 'docker-compose build'
             }
         }
     }
