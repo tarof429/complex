@@ -19,7 +19,9 @@ pipeline {
         }
         stage('Build app') {
             when {
-                branch 'refs/remotes/origin/master' // only run these steps on the master branch
+                not {
+                    branch 'master'
+                }
             }
 
             steps {
