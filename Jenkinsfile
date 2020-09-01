@@ -19,8 +19,7 @@ pipeline {
         }
         stage('Build app') {
             steps {
-                output = sh returnStdout: true, script: "docker-compose build"
-                echo output
+                sh "docker-compose build"
             }
         }
     }
