@@ -23,7 +23,6 @@ pipeline {
             }
 
             steps {
-                statusCode = 
                 sh """
                    docker-compose build
                    echo "Exit code: $?"
