@@ -18,14 +18,13 @@ pipeline {
             }
         }
         stage('Build app') {
-            when {
-                not {
-                    branch 'master'
-                }
-            }
-
             steps {
-                sh label: 'output', returnStdout: true, script: 'docker-compose build'
+                output = sh label: 'output', returnStdout: true, script: 'docker-compose build'
+            }
+            post {
+                always {
+                    sh 'echo "$output"'
+                }
             }
         }
     }
