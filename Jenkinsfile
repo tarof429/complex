@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Build app') {
             steps {
-                output = sh label: 'output', returnStdout: true, script: 'docker-compose build'
+                output = sh(label: 'output', returnStdout: true, script: 'docker-compose build').trim()
             }
             post {
                 always {
