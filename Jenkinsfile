@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'ubuntu-build-server'
+            label 'zaxserver'
         }
     }
 
@@ -15,6 +15,12 @@ pipeline {
                 sh """
                 env
                 """
+            }
+        }
+        stage('Build app') {
+            steps {
+                output = sh returnStdout: true, script: "docker-compose build"
+                echo output
             }
         }
     }
