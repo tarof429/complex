@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh """
                    docker-compose build
-                   echo "Exit code: $?"
+                   echo Exit code: $?
                 """
             }
         }
