@@ -21,10 +21,13 @@ pipeline {
             when {
                 branch 'master' // only run these steps on the master branch
             }
-            
+
             steps {
-                statusCode = sh returnStatus: true, script: "docker-compose build"
-                print(statusCode)
+                statusCode = 
+                sh """
+                   docker-compose build
+                   echo "Exit code: $?"
+                """
             }
         }
     }
