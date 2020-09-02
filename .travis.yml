@@ -11,17 +11,17 @@ script:
   - docker run -e CI=true tarof429/react-test npm run test
 
 after_success:
-  - docker build -t tarof429/multi-client ./client
-  - docker build -t tarof429/multi-nginx ./nginx
-  - docker build -t tarof429/multi-server ./server
-  - docker build -t tarof429/multi-worker ./worker
+  # - docker build -t tarof429/multi-client ./client
+  # - docker build -t tarof429/multi-nginx ./nginx
+  # - docker build -t tarof429/multi-server ./server
+  # - docker build -t tarof429/multi-worker ./worker
   # Login to docker-hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
   # Push images to docker-hub
-  - docker push tarof429/multi-client
-  - docker push tarof429/multi-nginx
-  - docker push tarof429/multi-server 
-  - docker push tarof429/multi-worker
+  # - docker push tarof429/multi-client
+  # - docker push tarof429/multi-nginx
+  # - docker push tarof429/multi-server 
+  # - docker push tarof429/multi-worker
 
 # deploy:
 #   provider: elasticbeanstalk
