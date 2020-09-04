@@ -20,12 +20,6 @@
             "essential": false
           },
           {
-            "name": "worker",
-            "image": "tarof429:multi-worker",
-            "hostname": "worker",
-            "essential": false
-          },
-          {
             "name": "nginx",
             "image": "tarof429:multi-nginx",
             "essential": true,
