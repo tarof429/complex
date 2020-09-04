@@ -23,14 +23,16 @@ after_success:
   - docker push tarof429/multi-server 
   - docker push tarof429/multi-worker
 
-# deploy:
-#   provider: elasticbeanstalk
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
-#   region: "us-west-2"
-#   app: "complex"
-#   env: "DockerReact-env"
-#   bucket_name: "elasticbeanstalk-us-west-2-981150355971"
-#   bucket_path: "complex"
-#   on:
-#     branch: master
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: $AWS_SECRET_KEY
+  region: "us-west-2"
+  app: "complex"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-981150355971"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
