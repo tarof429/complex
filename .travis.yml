@@ -29,7 +29,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   region: "us-west-2"
-  app: "complex"
+  app: "multi-docker"
   env: "MultiDocker-env"
   bucket_name: "elasticbeanstalk-us-west-2-981150355971"
   bucket_path: "docker-multi"
